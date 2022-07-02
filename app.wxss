@@ -1,0 +1,28 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+
+.bottom-nav{
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+.nav-item{
+    width: 33%;
+    height: 100%;
+    text-align: center;
+    border: 1px black solid;
+}
+
+.select{
+    background-color: black;
+    color: white;
+}

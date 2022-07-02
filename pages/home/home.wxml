@@ -1,0 +1,82 @@
+<van-overlay show="{{isCreateTask||isEditTask}}" />
+<view class="header">
+    <van-notice-bar style="width: 100%;height: 100%;font-size: 18px;line-height: 42px;" color="white" background= "#1597dc" scrollable text="{{note}}" />
+    <!-- <view>
+    <image src="icon/+.png" class="add" bindtap="addTask"></image></view> -->
+</view>
+<!--任务列表-->
+<view  class="task-list">
+    <view wx:for="{{task}}">
+        <van-swipe-cell left-width="{{ 65 }}">
+            <van-icon slot="left" name="clear" color="red"
+            size="30px" custom-style="margin: 17px 0;margin-right: 30rpx" bindtap="deleteTask" data-index="{{index}}"/>
+            <view class="task-list-item">
+                <view class="task-info" bindtap="edit" data-index="{{index}}">
+                <text class="item-name">{{item.name}}</text>
+                <text class="item-time">{{item.time}}</text>
+                </view>
+                <view class="begin" bindtap="begin" data-index="{{index}}">开始</view>
+                <view class="completedsign" wx:if="{{task[index].complete_num == 1}}" style="right: 70rpx;">已完成</view>
+                <view class="completedsign" wx:if="{{task[index].complete_num > 1}}">已完成{{task[index].complete_num}}次</view>
+            </view> 
+        </van-swipe-cell>
+    </view>
+<!--倒计时弹窗-->
+    <van-overlay 
+    show="{{taskongoing}}" z-index="1">
+        <view class="wrapper">
+        <view class="begin-block">
+        <view class="begin-header">{{ongoingtask.name}}</view>
+            <view class="count-down">
+            <van-count-down use-slot time="{{ time }}" bind:change="onChange" class="clock">
+            <text class="item">{{ timeData.hours }}</text>
+            <text class="item">{{ timeData.minutes }}</text>
+            <text class="item">{{ timeData.seconds }}</text>
+            </van-count-down>
+            </view>
+        <view class="begin-footer">
+            <button wx:if="{{completeahead}}" class="button completeahead" bindtap="completeAhead">提前完成</button>
+            <button bindtap="giveup" class="button giveup">放弃</button>
+        </view>
+        </view>
+        </view>
+    </van-overlay>
+</view>
+
+
+<!--增加任务弹窗-->
+<view class="add-task" wx:if="{{isCreateTask}}">
+    <view class="pop-header">
+    <text class="hint">增加任务</text>
+    <image src="icon/check.png" class="check" bindtap="confirm"></image>
+    <image src="icon/X.png" class="unshow" bindtap="unshow"></image>
+    </view>
+    <input bindblur="getName" placeholder="点击输入任务名称" class="in-task-name"/>
+    <input bindblur="getTime" placeholder="点击输入任务时间(分钟)" class="in-task-time" wx:if="{{isinputtime}}"/>
+    <view class="time-select">
+    <button class="{{time_button_select[0]==1 ? 'time-button time-button-select' : 'time-button'}}" data-time="30" bindtap="selectTime">30</button>
+    <button class="{{time_button_select[1]==1 ? 'time-button time-button-select' : 'time-button'}}" data-time="60"  bindtap="selectTime">60</button>
+    <button class="{{time_button_select[2]==1 ? 'time-button time-button-select' : 'time-button'}}" data-time="90"  bindtap="selectTime">90</button>
+    <button class="{{time_button_select[3]==1 ? 'time-button time-button-select' : 'time-button'}}" data-time="120"  bindtap="selectTime">120</button>
+    <button class="{{time_button_select[4]==1 ? 'time-button time-button-select' : 'time-button'}}" style="width: 25%; font-size: 14px; margin-top: 8px;" bindtap="inputTime">自定义</button>
+    </view>
+</view>
+
+<!--编辑任务-->
+<view class="add-task" style="height: 500rpx;" wx:if="{{isEditTask}}">
+    <view class="pop-header" style="height: 20%;">
+    <text class="hint">编辑任务</text>
+    <image src="icon/check.png" class="check" bindtap="confirmModify"></image>
+    <image src="icon/X.png" class="unshow" bindtap="unshowEdit"></image>
+    </view>
+<view class="key-value">
+    <text class="key">任务名称</text>
+    <input bindblur="getNewName" placeholder="点击输入名称" class="in-task-name" value="{{editTaskName}}" style="height: 100%;width: 65%;"/>
+</view>
+<view class="key-value">
+    <text class="key" >任务时间</text>
+    <input bindblur="getNewTime" placeholder="点击输入时间" class="in-task-time" value="{{editTaskTime}}" style="height: 100%;width: 65%;"/>
+</view>
+</view>
+
+<view class="addTask" bindtap="addTask">增加任务</view>

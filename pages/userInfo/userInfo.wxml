@@ -1,0 +1,58 @@
+<!--pages/userInfo/userInfo.wxml-->
+<view class="mask" catchtouchmove="preventTouchMove" wx:if="{{isChangeMotto}}"></view>
+
+<view class="user-info-root">
+    <view class="user-info-item user-info-item-avatar" bindtap="updateAvatarUrl">
+        <view class="user-info-item-title">
+            头像
+        </view>
+        <view class="user-info-item-value">
+            <image class="user-info-item-value-avatar" src="{{userInfo.avatarUrl}}" mode="aspectFill"></image>
+        </view>
+        <!-- <view class="user-info-item-go-to">
+        </view> -->
+    </view>
+
+    <view class="user-info-item" bindtap="goToUpdateName">
+        <view class="user-info-item-title">
+            昵称
+        </view>
+        <view class="user-info-item-value">
+            {{userInfo.nickName}}
+        </view>
+        <!-- <view class="user-info-item-go-to">
+        </view> -->
+    </view>
+
+		<view class="user-info-item" bindtap="goToUpdateNote">
+			<view class="user-info-item-title">
+				座右铭
+			</view>
+			<view class="user-info-item-value">
+				{{userInfo.note}}
+			</view>
+			<view class="user-info-item-go-to">
+			</view>
+		</view>
+
+		<view class="user-info-item" bindtap="goToUpdateDescription">
+			<view class="user-info-item-title">
+				联系方式(微信或QQ)
+			</view>
+			<view class="user-info-item-value">
+				{{userInfo.connectWay}}
+			</view>
+			<!-- <view class="user-info-item-go-to">
+			</view> -->
+		</view>
+</view>
+
+<view class="changeMotto" wx:if="{{isChangeMotto}}">
+    <view class="pop-header">
+    <text class="hint">修改座右铭</text>
+    <image src="icon/check.png" class="check" bindtap="confirm"></image>
+    <image src="icon/X.png" class="unshow" bindtap="unshow"></image>
+    </view>
+    <input bindinput="getMotto" bindconfirm="confirm" type="text" confirm-type="done" placeholder="在这里输入格言" class="in-task-name" value="{{userInfo.note}}"/>
+</view>
+    

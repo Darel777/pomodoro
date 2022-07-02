@@ -1,0 +1,21 @@
+/* pages/my/about/about.wxss */
+
+text{
+    font-family: '楷体';
+}
+
+.SecTitle{
+    font-size: large;
+    font-family: '宋体';
+}
+
+.containerInAbout{
+    margin: 16rpx;
+    margin-bottom: 20rpx;
+    padding: 10rpx;
+    border: 2rpx solid #707b8b;
+    border-radius: 2rpx;
+    box-shadow: 8rpx 4rpx 4rpx #707b8b;
+    position: relative;
+    background-color: #ee9ea5;
+}

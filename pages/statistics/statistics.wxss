@@ -1,0 +1,16 @@
+.btncn1{
+    text-align: center;
+    margin: 0 auto;
+}
+.van-button--primary {
+    font-size: 50px;
+    background-color: pink;
+  }
+.graphexample{
+    text-align: center;
+    margin: 0 auto;
+}
+.van-image{
+    vertical-align: auto;
+}
+  

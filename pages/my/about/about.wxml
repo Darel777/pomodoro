@@ -1,0 +1,38 @@
+<!--pages/my/about/about.wxml-->
+
+<view class="containerInAbout">
+    <text style="white-space:pre-wrap"  class="FirTitle">
+        <text class="SecTitle">开发团队：</text> 
+    郑寒超 201250150 
+    刘晓旭 201250123
+    刘承杰 201250125
+    王 骁  201250151
+    章华鹏 201250183
+    </text>
+</view>
+
+<view class="containerInAbout">
+    <text style="white-space:pre-wrap" class="FirTitle">
+        <text class="SecTitle">食用说明：</text> 
+  1. 本程序主要功能设置小闹钟，进行任务;
+  2. 在主页当中点击【增加任务】，输入任务名称与时长可开始一次专注任务;
+  3. 在“统计”页面中可以查看已完成的任务总量与时间，也可以查看指定时间段数据;
+  4. 在“我的”页面中可以设置个人基本信息;
+    </text>
+
+</view>
+<view class="containerInAbout">
+    <text style="white-space:pre-wrap" class="FirTitle">
+        <text class="SecTitle">版本更新公告：</text> 
+  5.24 小程序初步完成并上线
+    </text>
+</view>
+
+
+
+
+
+
+
+ 
+ 

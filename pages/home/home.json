@@ -1,0 +1,14 @@
+{
+    "usingComponents": {
+        "van-popup": "/miniprogram_npm/@vant/weapp/popup/index",
+        "van-cell": "/miniprogram_npm/@vant/weapp/cell/index",
+        "van-cell-group": "/miniprogram_npm/@vant/weapp/cell-group/index",
+        "van-field": "/miniprogram_npm/@vant/weapp/field/index",
+        "van-overlay": "/miniprogram_npm/@vant/weapp/overlay/index",
+        "van-count-down": "/miniprogram_npm/@vant/weapp/count-down/index",
+        "van-swipe-cell": "/miniprogram_npm/@vant/weapp/swipe-cell/index",
+        "van-icon": "/miniprogram_npm/@vant/weapp/icon/index",
+        "van-notice-bar": "@vant/weapp/notice-bar/index"
+      },
+    "navigationBarTitleText": "主页"
+}

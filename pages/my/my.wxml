@@ -1,0 +1,66 @@
+<view class="me-root">
+
+<view class="me-user-wrapper"  >
+    <!-- <navigator class="me-item me-item-margin" url="/pages/userInfo/userInfo"> -->
+    <!-- 头像 -->
+    <image class="me-user-avatar" mode="aspectFill" src="{{userInfo.avatarUrl}}"></image>
+    <view class="me-user-info">
+        <!-- 用户名 -->
+        <view class="me-user-user-name">
+            <text>{{userInfo.nickName}}</text>
+            
+        </view>
+        <!-- 座右铭 -->
+        <view class="me-user-description">
+            {{userInfo.note}}
+        </view>
+    </view>
+    <view class="me-go-to">
+    </view>
+    <!-- </navigator> -->
+</view>
+
+ <view class="me-list">
+    <navigator class="me-item me-item-margin" url="../userInfo/userInfo">
+        <image class="me-item-icon" src="" mode="aspectFill" src="../../icon/my-detail.png"></image>
+        <view class="me-item-title">
+            
+            俺的基本信息o(*≧▽≦)ツ
+        </view>
+       
+    </navigator>
+
+     <navigator class="me-item" url="./about/about" >
+        <image class="me-item-icon" src="../../icon/my-about.png" mode="aspectFill"></image>
+        <view class="me-item-title me-item-title-border">
+            关于小闹钟
+        </view>
+        <view class="me-item-go-to">
+        </view>
+    </navigator>
+
+    <view class="me-item">
+        <image class="me-item-icon" src="../../icon/my-about.png" mode="aspectFill"></image>
+        <view class="me-item-title me-item-title-border">
+            允许提前关闭小闹钟
+        </view>
+        <view >
+            <switch bindchange="stateChanege" checked="{{premitCloseBefore}}"></switch>
+        </view>
+    </view>
+
+    
+
+    <!-- <navigator class="me-item" bindtap="loadmymoment(userInfo.id)" >
+        <image class="me-item-icon" src="../../icon/my-setting.png" mode="aspectFill"></image>
+        <view class="me-item-title me-item-title-border">
+            意见与反馈
+        </view>
+        <view class="me-item-go-to">
+        </view>
+    </navigator> -->
+
+   
+</view> 
+
+</view>
