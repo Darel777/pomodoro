@@ -1,0 +1,70 @@
+<!-- <van-notice-bar
+  color="#1989fa"
+  background="#ecf9ff"
+  left-icon="info-o"
+  text="和后端连接，请注意。"
+/> -->
+<!-- 本页面会向后端传递的数据只有两组：一是开始年月日 二是结束年月日  -->
+<!-- 想要返回的数据在“您的数据”之中 -->
+
+<van-notify id="van-notify" />
+<van-cell-group>
+    <van-cell  title="方式1：选择起止时间" />
+    
+    <!-- string start_selected 开始时间 -->
+    <!-- string end_selected 结束时间 -->
+    <van-cell  title="请选择您选择的开始时间" is-link value="{{start_selected}}" bind:click="showPopup_start_time"/>
+    <van-cell  title="请选择您选择的终止时间" is-link value="{{end_selected}}" bind:click="showPopup_end_time"/>
+    <van-cell  title="方式2：选择近一段时间的数据"/>
+    <!-- <van-cell  title="开始时间" is-link value="{{start_selected}}" />
+    <van-cell  title="终止时间" is-link value="{{end_selected}}" /> -->
+    <van-cell  title="近3天" value="" is-link bind:click="threedays"/>
+    <van-cell  title="近7天" value="" is-link bind:click="sevendays"/>
+    <van-cell  title="近15天" value="" is-link bind:click="fifteendays"/>
+    <van-cell  title="近30天" value="" is-link bind:click="thirtydays"/>
+</van-cell-group>
+
+<!-- 自定义天数滑块 -->
+    <!-- <van-slider min="1" max="30" value="1" step="1" bind:drag="Dragging"/> -->
+    <!--number days_selected 自定义天数 -->
+    <!-- <van-cell  title="自定义天数" value="{{days_selected}}" /> -->
+    <!-- <text>\r\n</text> -->
+
+
+<!-- 您的数据 分隔符 -->
+    <van-divider
+    contentPosition="center"
+    customStyle="color: #1989fa; border-color: #1989fa; font-size: 18px;"
+    >
+    您的数据
+    </van-divider>
+<!-- 获得的结果 -->
+ <van-cell-group inset>
+  <!-- 注：这里出现了一点更改  outtodate改成了已完成的任务数量 outtostreak暂时无法实现-->
+  <!-- <van-cell title="自律天数" value="{{self_outtostreak}}" /> -->
+  <van-cell title="已完成的任务数量" value="{{self_outtodate}}" />
+  <van-cell title="自律时间" value="{{self_outtomins}}" label="分钟" />
+  
+</van-cell-group>
+
+
+
+<!-- 两个选择符 -->
+<van-popup show="{{ show_start_time }}" position="bottom" bind:close="onClose_start_time" >
+    <van-datetime-picker
+        type="date"
+        value="{{currentDate_start_time}}"
+        bind:input="onInput_start_time"
+        bind:confirm="onSelect_start_time"
+        bind:cancel="onClose_start_time"
+    />
+</van-popup>
+<van-popup show="{{ show_end_time }}" position="bottom" bind:close="onClose_end_time" >
+    <van-datetime-picker
+        type="date"
+        value="{{currentDate_end_time}}"
+        bind:input="onInput_end_time"
+        bind:confirm="onSelect_end_time"
+        bind:cancel="onClose_end_time"
+    />
+</van-popup>

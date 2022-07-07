@@ -1,0 +1,276 @@
+@import '/miniprogram_npm/@vant/weapp/common/index.wxss';
+.header{
+    height: 100rpx;
+    /* background-color: #1899dc; */
+    background-color: #1597dc;
+    margin-bottom: 50rpx;
+}
+
+.add{
+    float: right;
+    width: 50rpx;
+    height: 50rpx;
+    margin: 25rpx;
+}
+
+.add-task{
+    top: 50%;
+    transform: translateY(-50%);
+    position: fixed;
+    width: calc(100% - 30px);
+    left: 15px;
+    height: 600rpx;
+    background-color: #cfedfd;
+    display: block;
+    border-radius: 50rpx;
+    z-index: 1;
+}
+
+.info{
+    margin: 30rpx 0;
+}
+
+.check{
+    position: fixed;
+    width: 40rpx;
+    height: 40rpx;
+    right: 150rpx;
+    margin: 30rpx 0;
+}
+
+.unshow{
+    width: 40rpx;
+    height: 40rpx;
+    float: right;
+    margin: 30rpx;
+}
+
+.task-name{
+    margin-left: 50rpx;
+    padding-top: 20rpx;
+    height: 100rpx;
+    font-size: 50rpx;
+}
+
+.pop-header{
+    height: 16%;
+    width: 100%;
+    background-color: #bfbfbf;
+    border-top-right-radius: inherit;
+    border-top-left-radius: inherit;
+}
+
+
+
+.task-list-item{
+    z-index: -1;
+    width: 95%;
+    height: 150rpx;
+    margin: auto;
+    background-color: #ecf9ff;
+    position: relative;
+    border-radius: 20rpx;
+    margin-bottom: 40rpx;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.25);
+    display: flex;
+}
+
+.task-info{
+    height: 100%;
+    width: 75%;
+}
+
+.item-name{
+    font-size: 24px;
+    margin-left: 50rpx;
+}
+
+.item-time{
+    position: absolute;
+    bottom: 10rpx;
+    left: 0;
+    margin-left: 50rpx;
+}
+
+.begin{
+    /* width: 180rpx;
+    height: 90rpx; */
+    text-align: center;
+    vertical-align: middle;
+    float: right;
+    margin: 30rpx;
+    line-height: 90rpx;
+    background: transparent;
+    border-style: none;
+    position: absolute;
+    right: 0;
+    margin-right: 32px;
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+  
+  .begin-block {
+    width: 240px;
+    height: 300px;
+    background-color: #fff;
+    border-radius: 30rpx;
+  }
+
+  .begin-header{
+    height: 20%;
+    width: 100%;
+    text-align: center;
+    line-height: 60px;
+    font-size: 24px;
+    background-color: #bfbfbf;
+    border-top-left-radius: 30rpx;
+    border-top-right-radius: 30rpx;
+  }
+
+  .item {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    margin-right: 5px;
+    color: #fff;
+    font-size: 40px;
+    text-align: center;
+    line-height: 60px;
+    /* background-color: #1989fa; */
+    background-color: black;
+    border-radius: 2px;
+  }
+
+  .in-task-name{
+    width: 100%;
+    height: 30%;
+    text-align: center;
+  }
+
+  .in-task-time{
+    width: 100%;
+    height: 12%;
+    text-align: center;
+  }
+
+  .key-value{
+    height: 30%;
+    margin-top: 10px;
+    font-size: 16px;
+    display: flex;
+  }
+
+  .key{
+      width: 35%;
+      text-align: center;
+      line-height: 63.9px;
+      white-space: nowrap;
+      color: #1597dc;
+  }
+
+  .count-down{
+      height: 60%;
+      width: 100%;
+      position: relative;
+  }
+
+  .clock{
+    position: absolute;
+    top: 60px;
+    left: 25px;
+  }
+
+  .begin-footer{
+      height: 20%;
+      width: 100%;
+      display: flex;
+  }
+
+  .button{
+    height: 60%;
+    line-height: 30px;
+    margin-top: 10px;
+  }
+
+  .completeahead{
+    background-color: #7dc5eb;
+    line-height: 36px;
+    color: white;
+  }
+
+  .giveup{
+    background-color: red;
+    line-height: 36px;
+    color: white;
+  }
+
+  .time-select{
+      display: flex;
+      height: 42%;
+      width: 100%;
+      flex-wrap: wrap;
+  }
+
+  .time-button{
+    height: 30%;
+    margin-top: 20px;
+    width: 20%;
+    border-radius: 16px;
+    line-height: 33px;
+    font-size: 15px;
+    background: transparent;
+    border: none;
+    word-wrap: break-word;
+    background-color: white;
+    color: black;
+  }
+
+  .time-button-select{
+      background-color: black;
+      color: white;
+  }
+
+  .completedsign{
+    position: absolute;
+    right: 30rpx;
+    bottom: 10rpx;
+    font-size: 14px;
+    color: red;
+  }
+
+.notice{
+    width: 100%;
+    height: 100%;
+    font-size: 18px;
+    line-height: 42px;
+}
+
+.addTask{
+    width: 100px;
+    height: 36px;
+    background-color: #ecf9ff;
+    color: black;
+    font-size: 18px;
+    text-align: center;
+    line-height: 36px;
+    border: 1px grey solid;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.25);
+    position: fixed;
+    bottom: 0;
+    margin-bottom: 10px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+}
+
+.hint{
+    line-height: 43px;
+    margin-left: 24px;
+    font-size: 20px;
+}

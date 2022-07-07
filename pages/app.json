@@ -1,0 +1,45 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/home/home",
+        "pages/statistics/statistics",
+        "pages/my/my",
+        "pages/nav/nav",
+        "pages/userInfo/userInfo",
+        "pages/my/about/about"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "Weixin",
+        "navigationBarTextStyle": "black"
+    },
+    "tabBar": {
+        "selectedColor": "#1296db",
+        "list": [
+            {
+                "pagePath": "pages/home/home",
+                "text": "主页",
+                "iconPath": "icon/home.png",
+                "selectedIconPath": "icon/home-selected.png"
+            },
+            {
+                "pagePath": "pages/statistics/statistics",
+                "text": "统计",
+                "iconPath": "icon/statistics.png",
+                "selectedIconPath": "icon/statistics-selected.png"
+            },
+            {
+                "pagePath": "pages/my/my",
+                "text": "我的",
+                "iconPath": "icon/my.png",
+                "selectedIconPath": "icon/my-selected.png"
+            }
+        ],
+        "position": "bottom"
+    },
+    "usingComponents": {
+        "van-button": "/miniprogram_npm/@vant/weapp/button/index"
+    },
+    "sitemapLocation": "sitemap.json"
+}
